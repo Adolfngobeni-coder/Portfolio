@@ -138,3 +138,7 @@ footer {
 .btn:hover {
   opacity: 0.85;
 }
+footer i {
+  margin: 0 10px;
+  font-size: 1.3rem;
+}
