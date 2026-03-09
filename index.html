@@ -18,7 +18,8 @@
 </head>
 <body>
 
-<p class="subtitle">
+<section class="container fade-in">
+  <p class="subtitle">
   <i class="fa-solid fa-code"></i> Aspiring Web Developer •
   <i class="fa-solid fa-computer"></i> IT Support •
   <i class="fa-solid fa-globe"></i> Digital Technology
@@ -58,14 +59,12 @@
 
   <div class="projects-grid">
 
-    <div class="project-card">
-      <h3><i class="fa-solid fa-hospital"></i> Clinic Website</h3>
-      <p>
-        Responsive clinic website built using WordPress. Includes contact
-        forms, mobile optimization, and basic SEO setup.
-      </p>
-      <p class="tech">Tools: WordPress, HTML, CSS</p>
-    </div>
+   <div class="project-card">
+  <img src="images/clinic.jpg" alt="Clinic Website Project">
+  <h3>Clinic Website</h3>
+  <p>Responsive WordPress clinic website with SEO and contact forms.</p>
+  <p class="tech">WordPress • HTML • CSS</p>
+</div>
 
     <div class="project-card">
      <h3><i class="fa-solid fa-user"></i> Personal Portfolio</h3>
@@ -88,15 +87,18 @@
   </div>
 </section>
 
-<section class="container">
-  <h2>Contact</h2>
-  <p>Email: <strong>adolfngobeni6@gmail.com</strong></p>
-  <p>
-    GitHub:
-    <a href="https://github.com/Adolfngobeni-coder" target="_blank">
-      github.com/Adolfngobeni-coder
-    </a>
-  </p>
+<section class="container fade-in">
+  <h2>Contact Me</h2>
+
+  <form action="https://formsubmit.co/adolfngobeni6@gmail.com" method="POST" class="contact-form">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <button type="submit" class="btn">Send Message</button>
+
+  </form>
 </section>
 
 <footer>
