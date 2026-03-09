@@ -117,3 +117,24 @@ footer {
     font-size: 2rem;
   }
 }
+/* Animation base */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effects */
+.project-card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
