@@ -1,13 +1,18 @@
-* {
-  box-sizing: border-box;
+:root {
+  --bg: #f2f3f5;
+  --card: #ffffff;
+  --text: #222;
+  --muted: #666;
+  --primary: #111;
+  --accent: #d9d9d9;
 }
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f4f6f8;
-  color: #222;
-  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
 }
 
 /* HERO */
@@ -141,4 +146,48 @@ footer {
 footer i {
   margin: 0 10px;
   font-size: 1.3rem;
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* Cards hover */
+.project-card,
+.skills-grid span {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover,
+.skills-grid span:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
 }
