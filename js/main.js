@@ -86,6 +86,79 @@ function renderApp() {
             </div>
         </section>
 
+        // Add this after the Experience section in your renderApp function
+
+// Projects Section
+function renderProjects() {
+    return `
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid" id="projectsGrid">
+                    ${renderProjectCards()}
+                </div>
+            </div>
+        </section>
+    `;
+}
+
+function renderProjectCards() {
+    const projects = [
+        {
+            name: "OneConnect.co.za",
+            url: "https://oneconnect.co.za",
+            description: "Company website with both original HTML/PHP/CSS version and new WordPress development",
+            technologies: ["HTML", "PHP", "CSS", "WordPress"],
+            status: "Live",
+            icon: "fa-building"
+        },
+        {
+            name: "RTFoundation",
+            url: "https://rtfoundation.co.za",
+            description: "Non-profit organization website with donation integration and information portal",
+            technologies: ["WordPress", "PHP", "Custom Theme"],
+            status: "Live",
+            icon: "fa-heart"
+        },
+        {
+            name: "DockieTladiFoundation",
+            url: "https://dockietladifoundation.org",
+            description: "Foundation website showcasing community work with donation system",
+            technologies: ["WordPress", "WooCommerce", "CMS"],
+            status: "Live",
+            icon: "fa-hand-holding-heart"
+        },
+        {
+            name: "Hackathon 2025",
+            url: "#",
+            description: "Annual tech event platform with registration and project submission (In Development)",
+            technologies: ["React", "Node.js", "MongoDB"],
+            status: "Development",
+            icon: "fa-code"
+        }
+    ];
+    
+    return projects.map(project => `
+        <div class="project-card">
+            <div class="project-icon">
+                <i class="fas ${project.icon}"></i>
+            </div>
+            <h3>${project.name}</h3>
+            <p>${project.description}</p>
+            <div class="project-tech">
+                ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+            </div>
+            <div class="project-footer">
+                <span class="project-status status-${project.status.toLowerCase()}">${project.status}</span>
+                ${project.url !== '#' ? `<a href="${project.url}" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Visit Site</a>` : '<span class="project-link disabled">In Development</span>'}
+            </div>
+        </div>
+    `).join('');
+}
+
+// Add this to your renderApp function after the experience section
+// Find where you render the experience section and add this after it
+
         <!-- Footer -->
         <footer>
             <div class="container">
