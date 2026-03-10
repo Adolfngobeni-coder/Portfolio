@@ -3,8 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Render the entire application
     renderApp();
     
-    // Initialize event listeners
-    initializeEventListeners();
+    // Initialize event listeners after rendering
+    setTimeout(() => {
+        initializeEventListeners();
+    }, 100);
 });
 
 function renderApp() {
@@ -34,7 +36,7 @@ function renderHeader() {
             <div class="contact-info">
                 <span><i class="fas fa-phone-alt"></i> 063 343 6756</span>
                 <span><i class="fas fa-envelope"></i> adolfngobeni6@gmail.com</span>
-                <span><i class="fas fa-map-pin"></i> Diepsloot, JHB</span>
+                <span class="address"><i class="fas fa-map-pin"></i> Diepsloot, JHB</span>
             </div>
         </div>
     `;
@@ -44,7 +46,7 @@ function renderProfile() {
     return `
         <div class="profile">
             <h2><i class="fas fa-user-check"></i> Professional Profile</h2>
-            <p>Creative, detail-oriented, and results-driven professional with expertise in IT Support, Web Development, System Administration, and Digital Marketing. Experienced in managing technical projects, CRM campaigns, and domain and hosting accounts. Thrive in challenging environments, adapt quickly, and consistently deliver projects with integrity, precision, and innovation.</p>
+            <p>${profileSummary}</p>
         </div>
     `;
 }
@@ -54,7 +56,7 @@ function renderSkills() {
         <div class="skills-panel" id="skillsComponent">
             <div class="section-title">
                 <i class="fas fa-cogs"></i> Core Skills 
-                <span style="font-size: 0.9rem; font-weight: normal; margin-left: auto; background: #e1effb; padding: 0.2rem 1.2rem; border-radius: 30px;">react · tabs</span>
+                <span class="react-badge"><i class="fab fa-react"></i> react · tabs</span>
             </div>
             
             <div class="skill-tabs">
@@ -67,7 +69,7 @@ function renderSkills() {
             </div>
 
             <div class="skills-grid" id="skillsGrid"></div>
-            <p style="margin-top: 1rem; font-size: 0.9rem; color: #4b6f8a;"><i class="far fa-hand-pointer"></i> Click tabs to filter</p>
+            <p class="skill-note"><i class="far fa-hand-pointer"></i> Click tabs to filter skills</p>
         </div>
     `;
 }
@@ -76,7 +78,7 @@ function renderMainDetails() {
     return `
         <div class="main-details">
             <div class="work-experience">
-                <h3 style="font-size: 1.6rem; margin-bottom: 1.2rem;"><i class="fas fa-briefcase"></i> Work Experience</h3>
+                <h3 class="section-heading"><i class="fas fa-briefcase"></i> Work Experience</h3>
                 ${renderWorkExperience()}
             </div>
             <div class="extra-info">
@@ -95,7 +97,10 @@ function renderWorkExperience() {
         html += `
             <div class="work-item">
                 <h3>${job.title}</h3>
-                <div class="company">${job.company} <span class="date">${job.date}</span></div>
+                <div class="company">
+                    ${job.company} 
+                    <span class="date">${job.date}</span>
+                </div>
                 <ul>
                     ${job.responsibilities.map(resp => `<li><i class="fas fa-circle"></i> ${resp}</li>`).join('')}
                 </ul>
@@ -109,8 +114,8 @@ function renderEducation() {
     return `
         <div class="sub-block">
             <h4><i class="fas fa-graduation-cap"></i> Education</h4>
-            <p><strong>${education.school}</strong> – ${education.qualification} (${education.year})<br>
-            Subjects: ${education.subjects.join(', ')}</p>
+            <p><strong>${education.school}</strong> – ${education.qualification} (${education.year})</p>
+            <p><i class="fas fa-book-open"></i> Subjects: ${education.subjects.join(', ')}</p>
         </div>
     `;
 }
@@ -120,7 +125,10 @@ function renderCertifications() {
         <div class="sub-block">
             <h4><i class="fas fa-certificate"></i> Certifications & Courses</h4>
             ${certifications.map(cert => `
-                <div class="cert-item"><i class="fas fa-check-circle" style="color:#1f6e9f;"></i> ${cert}</div>
+                <div class="cert-item">
+                    <i class="fas fa-check-circle"></i> 
+                    <span>${cert}</span>
+                </div>
             `).join('')}
         </div>
     `;
@@ -138,9 +146,12 @@ function renderPersonalDetails() {
             <div class="info-row">
                 <span class="info-tag"><i class="fas fa-heartbeat"></i> ${personalDetails.health}</span>
                 <span class="info-tag"><i class="fas fa-language"></i> ${personalDetails.homeLanguage} (home)</span>
-                <span class="info-tag"><i class="fas fa-language"></i> ${personalDetails.otherLanguages.join(', ')}</span>
             </div>
-            <p><i class="fas fa-id-card"></i> <strong>Driver's License:</strong> ${personalDetails.driversLicense}</p>
+            <div class="info-row">
+                <span class="info-tag"><i class="fas fa-language"></i> ${personalDetails.otherLanguages.join(', ')}</span>
+                <span class="info-tag"><i class="fas fa-id-card"></i> License: ${personalDetails.driversLicense}</span>
+            </div>
+            <p><i class="fas fa-map-marker-alt"></i> ${personalDetails.fullAddress}</p>
         </div>
     `;
 }
@@ -150,7 +161,11 @@ function renderReferences() {
         <div class="sub-block references">
             <h4><i class="fas fa-address-book"></i> References</h4>
             ${references.map(ref => `
-                <p><strong>${ref.name}</strong> – ${ref.position}${ref.contact ? ' | Tel: ' + ref.contact : ''}</p>
+                <p>
+                    <i class="fas fa-user-tie"></i>
+                    <strong>${ref.name}</strong> – ${ref.position}
+                    ${ref.contact ? `<br><i class="fas fa-phone"></i> ${ref.contact}` : ''}
+                </p>
             `).join('')}
         </div>
     `;
@@ -159,7 +174,8 @@ function renderReferences() {
 function renderDeclaration() {
     return `
         <div class="declaration">
-            <i class="fas fa-pen"></i> <strong>Declaration:</strong> I hereby declare that the above-mentioned information is true and correct. — Ngobeni A.H
+            <i class="fas fa-pen-fancy"></i>
+            <span><strong>Declaration:</strong> I hereby declare that the above-mentioned information is true and correct. — Ngobeni A.H</span>
         </div>
     `;
 }
@@ -167,12 +183,16 @@ function renderDeclaration() {
 function renderAjaxDemo() {
     return `
         <div class="ajax-demo">
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-sync-alt" style="color: #1f6e9f; font-size: 1.8rem;"></i>
-                <span style="font-weight: 600;">AJAX + Reactivity demo:</span>
+            <div class="ajax-left">
+                <i class="fas fa-sync-alt"></i>
+                <span>AJAX + Reactivity demo:</span>
             </div>
-            <button id="loadMoreBtn"><i class="fas fa-download"></i> Simulate AJAX fetch</button>
-            <div id="ajaxResponse"><i class="far fa-clock"></i> click to load additional info</div>
+            <button id="loadMoreBtn">
+                <i class="fas fa-download"></i> Simulate AJAX fetch
+            </button>
+            <div id="ajaxResponse">
+                <i class="far fa-clock"></i> Click to load additional info
+            </div>
         </div>
     `;
 }
@@ -180,7 +200,8 @@ function renderAjaxDemo() {
 function renderFooter() {
     return `
         <footer>
-            <i class="far fa-copyright"></i> Adolphus Hlawulani Ngobeni – github portfolio (HTML/CSS/JavaScript/React/AJAX integrated)
+            <i class="far fa-copyright"></i> ${new Date().getFullYear()} Adolphus Hlawulani Ngobeni – GitHub Portfolio
+            <br><small>HTML · CSS · JavaScript · React · AJAX</small>
         </footer>
     `;
 }
@@ -206,7 +227,7 @@ function initializeSkillsTabs() {
         soft: document.getElementById('tabSoft')
     };
 
-    // Add click handlers
+    // Check if elements exist before adding listeners
     if (tabs.all) tabs.all.addEventListener('click', () => handleTabClick('all', tabs.all));
     if (tabs.tech) tabs.tech.addEventListener('click', () => handleTabClick('tech', tabs.tech));
     if (tabs.it) tabs.it.addEventListener('click', () => handleTabClick('it', tabs.it));
@@ -222,7 +243,9 @@ function handleTabClick(category, activeTab) {
     });
     
     // Add active class to clicked tab
-    activeTab.classList.add('active');
+    if (activeTab) {
+        activeTab.classList.add('active');
+    }
     
     // Render skills for selected category
     renderSkillsByCategory(category);
@@ -236,9 +259,15 @@ function renderSkillsByCategory(category = 'all') {
         ? skillsCatalog 
         : skillsCatalog.filter(skill => skill.category === category);
     
+    if (filtered.length === 0) {
+        grid.innerHTML = '<div class="skill-item" style="grid-column: 1/-1; justify-content: center;">No skills found in this category</div>';
+        return;
+    }
+    
     grid.innerHTML = filtered.map(skill => `
         <div class="skill-item">
-            <i class="fas ${skill.icon}"></i> ${skill.name}
+            <i class="fas ${skill.icon}"></i> 
+            <span>${skill.name}</span>
         </div>
     `).join('');
 }
@@ -247,7 +276,7 @@ function initializeAjaxDemo() {
     const ajaxBtn = document.getElementById('loadMoreBtn');
     const ajaxResp = document.getElementById('ajaxResponse');
     
-    if (ajaxBtn) {
+    if (ajaxBtn && ajaxResp) {
         ajaxBtn.addEventListener('click', function() {
             // Show loading state
             ajaxResp.innerHTML = `<i class="fas fa-spinner fa-pulse"></i> fetching reference...`;
@@ -259,11 +288,16 @@ function initializeAjaxDemo() {
                     '📁 New WordPress site: DockieTladiFoundation',
                     '⚡ Zoho campaign: 68% open rate',
                     '🔐 SSL migration completed for OneConnect',
-                    '☁️ SharePoint intranet live'
+                    '☁️ SharePoint intranet live',
+                    '🎯 New project: RTFoundation website',
+                    '📊 Email campaign: 45% engagement rate'
                 ];
                 const randomMsg = extra[Math.floor(Math.random() * extra.length)];
-                ajaxResp.innerHTML = `<i class="fas fa-check-circle" style="color:#1f6e9f;"></i> ${randomMsg}`;
-            }, 600);
+                ajaxResp.innerHTML = `
+                    <i class="fas fa-check-circle" style="color:#1f6e9f;"></i> 
+                    <span>${randomMsg}</span>
+                `;
+            }, 800);
         });
     }
 }
