@@ -86,7 +86,8 @@ const personalDetails = {
     health: "Excellent",
     homeLanguage: "Xitsonga",
     otherLanguages: ["English", "Sepedi", "Zulu"],
-    driversLicense: "Code 10 (C1)"
+    driversLicense: "Code 10 (C1)",
+    fullAddress: "House 3464 Thisa Street, Ext 6, Diepsloot, Johannesburg, 2189"
 };
 
 // References
@@ -102,3 +103,6 @@ const education = {
     qualification: "Grade 12",
     subjects: ["Xitsonga", "English", "Maths Literacy", "Life Orientation", "History", "Life Sciences", "Tourism"]
 };
+
+// Profile summary
+const profileSummary = "Creative, detail-oriented, and results-driven professional with expertise in IT Support, Web Development, System Administration, and Digital Marketing. Experienced in managing technical projects, CRM campaigns, and domain and hosting accounts. Thrive in challenging environments, adapt quickly, and consistently deliver projects with integrity, precision, and innovation.";
