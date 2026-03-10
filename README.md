@@ -1,35 +1,21 @@
-# Adolph Ngobeni – Portfolio Website
+# Adolphus Hlawulani Ngobeni - Portfolio
 
-This is my personal online portfolio built to showcase my skills, projects,
-and professional growth as an aspiring IT and web professional.
+## Overview
+This is a professional portfolio website for Adolphus Hlawulani Ngobeni, showcasing skills, experience, and qualifications in IT Support, Web Development, System Administration, and Digital Marketing.
 
-## 🔹 About
-I am focused on building practical experience in:
-- Web Development
-- IT Support
-- Digital Platforms
-- SEO and Website Optimization
+## Technologies Used
+- **HTML5** - Structure
+- **CSS3** - Styling and responsive design
+- **JavaScript** - Interactive functionality
+- **React-like components** - Modular UI structure
+- **AJAX simulation** - Dynamic data loading demonstration
 
-This portfolio is part of my preparation for future employment opportunities.
+## Features
+- Responsive design that works on all devices
+- Interactive skill filtering tabs
+- Dynamic content rendering
+- AJAX simulation demo
+- Clean, professional layout
+- Comprehensive personal and professional information
 
-## 🔹 Technologies Used
-- HTML5
-- CSS3
-- Git & GitHub
-- GitHub Pages
-
-## 🔹 Live Website
-View my portfolio here:
-https://adolfngobeni-coder.github.io/Portfolio/
-
-## 🔹 Projects Included
-- Clinic Website (WordPress)
-- Personal Portfolio Website
-- Marketing Landing Page
-
-## 🔹 Contact
-- Email: adolfngobeni6@gmail.com
-- GitHub: https://github.com/Adolfngobeni-coder
-
----
-© 2026 Adolph Ngobeni
+## Project Structure
