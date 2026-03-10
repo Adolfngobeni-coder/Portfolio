@@ -1,21 +1,29 @@
-# Adolphus Hlawulani Ngobeni - Portfolio
+# Adolphus Hlawulani Ngobeni - Professional Portfolio
 
-## Overview
-This is a professional portfolio website for Adolphus Hlawulani Ngobeni, showcasing skills, experience, and qualifications in IT Support, Web Development, System Administration, and Digital Marketing.
+## 👨‍💻 About Me
+Creative, detail-oriented, and results-driven professional with expertise in IT Support, Web Development, System Administration, and Digital Marketing. Experienced in managing technical projects, CRM campaigns, and domain and hosting accounts.
 
-## Technologies Used
+## 📋 Portfolio Contents
+- Professional Profile
+- Core Skills (with interactive filtering)
+- Work Experience
+- Education & Certifications
+- Personal Details
+- Contact Information
+
+## 🛠️ Technologies Used
 - **HTML5** - Structure
 - **CSS3** - Styling and responsive design
 - **JavaScript** - Interactive functionality
 - **React-like components** - Modular UI structure
 - **AJAX simulation** - Dynamic data loading demonstration
 
-## Features
-- Responsive design that works on all devices
-- Interactive skill filtering tabs
-- Dynamic content rendering
-- AJAX simulation demo
-- Clean, professional layout
-- Comprehensive personal and professional information
+## ✨ Features
+- ✅ Fully responsive design
+- ✅ Interactive skill filtering tabs
+- ✅ Dynamic content rendering
+- ✅ AJAX simulation demo
+- ✅ Clean, professional layout
+- ✅ Mobile-friendly interface
 
-## Project Structure
+## 📁 Project Structure
