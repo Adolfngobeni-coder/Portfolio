@@ -7,7 +7,7 @@ function renderApp() {
         <section class="hero" id="home">
             <div class="hero-content">
                 <div class="profile-container">
-                    <img src="https://images./photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                          alt="Profile" 
                          class="profile-image">
                     <div class="profile-text">
