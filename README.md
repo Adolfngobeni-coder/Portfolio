@@ -1,29 +1,57 @@
-# Adolphus Hlawulani Ngobeni - Professional Portfolio
+# Adolphus Ngobeni - Professional Portfolio
 
-## 👨‍💻 About Me
-Creative, detail-oriented, and results-driven professional with expertise in IT Support, Web Development, System Administration, and Digital Marketing. Experienced in managing technical projects, CRM campaigns, and domain and hosting accounts.
+## 🌟 Overview
+A modern, interactive portfolio website showcasing professional skills, experience, and expertise in IT, Web Development, and Digital Marketing.
 
-## 📋 Portfolio Contents
-- Professional Profile
-- Core Skills (with interactive filtering)
-- Work Experience
-- Education & Certifications
-- Personal Details
-- Contact Information
+## 🎨 Features
+
+### Hero Section
+- Professional background image
+- Profile picture with floating animation
+- Name and title display
+- Bio section
+- **CV Download Button** - One-click CV download
+- **Chat Button** - Opens interactive chatbot
+
+### Interactive Chatbot
+- 🤖 Virtual assistant to answer questions
+- 💬 Pre-programmed responses about:
+  - Professional background
+  - Skills and expertise
+  - Work experience
+  - Certifications
+  - Education
+  - Projects
+  - Contact information
+- 🎯 Natural language processing for common queries
+- 📱 Minimizable chat widget
+
+### Skills Section
+- Categorized skills display
+- Interactive tabs for filtering:
+  - Development
+  - System Administration
+  - Marketing
+  - Tools
+- Hover effects and animations
+
+### Experience Timeline
+- Visual timeline of work history
+- Company names and dates
+- Role descriptions
+- Responsive design
+
+### Statistics
+- Years of experience
+- Projects completed
+- Certifications earned
+- Client satisfaction rate
 
 ## 🛠️ Technologies Used
 - **HTML5** - Structure
-- **CSS3** - Styling and responsive design
-- **JavaScript** - Interactive functionality
-- **React-like components** - Modular UI structure
-- **AJAX simulation** - Dynamic data loading demonstration
-
-## ✨ Features
-- ✅ Fully responsive design
-- ✅ Interactive skill filtering tabs
-- ✅ Dynamic content rendering
-- ✅ AJAX simulation demo
-- ✅ Clean, professional layout
-- ✅ Mobile-friendly interface
+- **CSS3** - Styling and animations
+- **JavaScript** - Interactivity and chatbot
+- **Font Awesome** - Icons
+- **Google Fonts** - Typography
 
 ## 📁 Project Structure
