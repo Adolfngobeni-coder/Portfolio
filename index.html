@@ -3,49 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Professional Portfolio</title>
+    <!-- Importing modern fonts from Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="css.style.css">
 </head>
 <body>
+
+    <!-- Navigation -->
     <nav>
-        <div class="logo">PORTFOLIO</div>
-        <ul>
+        <div class="logo">MyPortfolio</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#gallery">Projects</a></li>
         </ul>
     </nav>
 
-    <section id="hero">
-        <div class="hero-content">
-            <!-- Replace with your actual image path -->
-            <img src="my-profile.jpg" alt="Profile" class="profile-img">
-            <h1>Web Developer & Digital Marketer</h1>
-            <p>Expertise in HTML, CSS, JS, PHP, and WordPress</p>
-            <!-- Add your WordPress link here -->
-            <a href="YOUR_WORDPRESS_URL" class="btn">View WordPress Site</a>
+    <!-- Hero Section -->
+    <header id="hero" class="hero">
+        <div class="hero-container">
+            <div class="hero-image">
+                <!-- Replace 'profile.jpg' with your actual photo file name -->
+                <img src="profile.jpg" alt="My Profile Image">
+            </div>
+            <div class="hero-text">
+                <h1>Web Developer & Digital Marketer</h1>
+                <p>Specializing in HTML, CSS, JavaScript, PHP, and WordPress.</p>
+                <!-- Add your WordPress link below -->
+                <a href="https://your-wordpress-link.com" target="_blank" class="btn">Visit My WordPress Site</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About & Experience Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a versatile developer with 4 years of experience at <strong>OneConnect</strong>. My expertise bridges technical web development and digital marketing strategy.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Digital Marketing</h3>
+                    <ul>
+                        <li>Mailchimp & Zoho Campaigns</li>
+                        <li>Zoho CRM Management</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Technical Projects</h3>
+                    <ul>
+                        <li>Microsoft Azure Company Intranet</li>
+                        <li>PHP & Custom JS Development</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I have 4 years of experience at OneConnect. I specialize in both web development and digital marketing using Mailchimp, Zoho CRM, and Zoho Campaigns.</p>
-        <div class="education">
-            <h3>Qualifications & Certifications</h3>
+    <!-- Education & Certs Section -->
+    <section id="experience" class="section bg-light">
+        <div class="container">
+            <h2>Qualifications & Certifications</h2>
             <ul>
-                <li>Higher Certificate - Gauteng City College</li>
-                <li>Microsoft Certified (Details here)</li>
-                <li>Azure Intranet Developer</li>
+                <li><strong>Higher Certificate:</strong> Gauteng City College</li>
+                <li><strong>Microsoft Certificates:</strong> (Enter your specific certificates here)</li>
             </ul>
         </div>
     </section>
 
-    <section id="gallery">
-        <h2>Project Gallery</h2>
-        <div class="grid">
-            <div class="item"><img src="project1.jpg" alt="Project 1"></div>
-            <div class="item"><img src="project2.jpg" alt="Project 2"></div>
-            <div class="item"><img src="project3.jpg" alt="Project 3"></div>
+    <!-- Project Gallery -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2>Project Gallery</h2>
+            <div class="gallery-grid">
+                <!-- Replace these src attributes with your actual project images -->
+                <div class="gallery-item"><img src="project1.jpg" alt="Project 1"></div>
+                <div class="gallery-item"><img src="project2.jpg" alt="Project 2"></div>
+                <div class="gallery-item"><img src="project3.jpg" alt="Project 3"></div>
+            </div>
         </div>
     </section>
 
