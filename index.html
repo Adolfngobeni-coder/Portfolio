@@ -3,40 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adolphus Ngobeni - Portfolio</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <title>Your Name | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="root"></div>
+    <nav>
+        <div class="logo">PORTFOLIO</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
 
-    <!-- Chatbot Widget -->
-    <div class="chat-widget" id="chatWidget">
-        <div class="chat-header" id="chatHeader">
-            <i class="fas fa-robot"></i>
-            <span>Ask About Me</span>
-            <i class="fas fa-chevron-up" id="toggleChat"></i>
+    <section id="hero">
+        <div class="hero-content">
+            <!-- Replace with your actual image path -->
+            <img src="my-profile.jpg" alt="Profile" class="profile-img">
+            <h1>Web Developer & Digital Marketer</h1>
+            <p>Expertise in HTML, CSS, JS, PHP, and WordPress</p>
+            <!-- Add your WordPress link here -->
+            <a href="YOUR_WORDPRESS_URL" class="btn">View WordPress Site</a>
         </div>
-        <div class="chat-body" id="chatBody">
-            <div class="chat-messages" id="chatMessages">
-                <div class="message bot">
-                    <i class="fas fa-robot"></i>
-                    <div class="message-content">Hi! I'm your virtual assistant. Ask me anything about Adolphus!</div>
-                </div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" id="chatInput" placeholder="Type your question...">
-                <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </div>
+    </section>
 
-    <!-- Scripts -->
-    <script src="js/chat-data.js"></script>
-    <script src="js/main.js"></script>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I have 4 years of experience at OneConnect. I specialize in both web development and digital marketing using Mailchimp, Zoho CRM, and Zoho Campaigns.</p>
+        <div class="education">
+            <h3>Qualifications & Certifications</h3>
+            <ul>
+                <li>Higher Certificate - Gauteng City College</li>
+                <li>Microsoft Certified (Details here)</li>
+                <li>Azure Intranet Developer</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Project Gallery</h2>
+        <div class="grid">
+            <div class="item"><img src="project1.jpg" alt="Project 1"></div>
+            <div class="item"><img src="project2.jpg" alt="Project 2"></div>
+            <div class="item"><img src="project3.jpg" alt="Project 3"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
