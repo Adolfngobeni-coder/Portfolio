@@ -6,9 +6,9 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --navy:    #020617;
-  --navy2:   #0f172a;
-  --navy3:   #1e293b;
+  --navy:    #041045;
+  --navy2:   #172d60;
+  --navy3:   #54637a;
   --sky:     #38bdf8;
   --sky2:    #0ea5e9;
   --sky3:    #7dd3fc;
