@@ -1,8 +1,3 @@
-/* ═══════════════════════════════════════════════════════════
-   style.css — Adolph Portfolio
-   ═══════════════════════════════════════════════════════════ */
-
-/* ── RESET & VARIABLES ─────────────────────────────────────── */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -351,7 +346,7 @@ body {
 
 .hero-image-frame {
   position: relative;
-  width: 340px; height: 400px;
+  width: 360px; height: 420px;
 }
 
 .hero-image-frame::before {
