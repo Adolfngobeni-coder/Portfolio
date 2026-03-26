@@ -1,129 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewpoint" content="width=device-width", initials-scale="1.0">
-        <Link rel="stylesheet" href="css/style.css">
-        <title>My Portfolio</title>
-         </head>
-        <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adolph — Web Developer & Digital Marketer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-            <header class="header">
-                <div class="container">
-                    <div class="logo">
-                        <a href="#">Adolph</a>
-                    </div>
-
-                    <nav class="nav">
-                        <ul>
-                            <li><a href="#home">home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="project">Project</a></li>
-                            <li><a href="contact">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
-
-            <section class="hero-text">
-                <div class="container hero-container">
-
-                    <div class="hero-text">
-                        <hi>hi, I 'am<span>Adolph</span></hi>
-                        <h2>Website Developmet and digital Marketing</h2>
-                        <p>I build Clean,responsive, and user-friednly website
-                             using HTML,CSS,JavaScript, and Wordpress
-                        </p>
-                        <a href="#project" class="btn">View My Work</a>
-                    </div>
-
-                    <div class="hero-image">
-                        <img src="Adolph.jpg" atl="Adolph - web Development">
-                    </div>
-                </div>
-            </section>
-
-            <!-- Skills Slider Section Start -->
-<section class="skills-slider">
+  <!-- ═══════════════════════════════════ HEADER -->
+  <header class="header" id="header">
     <div class="container">
+      <div class="logo">
+        <a href="#home">Adolph<span>.</span></a>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        <h2 class="section-title">Technologies & Platforms</h2>
+  <!-- ═══════════════════════════════════ HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-container">
 
-        <div class="slider">
-            <div class="slide-track">
+        <div class="hero-text-col">
+          <div class="hero-badge">Available for work</div>
+          <h1 class="hero-heading">Hi, I'm <span>Adolph</span></h1>
+          <p class="hero-sub">Web Developer & Digital Marketer</p>
+          <p class="hero-desc">
+            I build clean, responsive, and user-friendly websites using HTML, CSS,
+            JavaScript, and WordPress — turning ideas into powerful digital experiences.
+          </p>
+          <div class="hero-cta">
+            <a href="#about" class="btn"><i class="fa-solid fa-eye"></i> View My Work</a>
+            <a href="#contact" class="btn btn-ghost"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+          </div>
+        </div>
 
-                <div class="slide">HTML</div>
-                <div class="slide">CSS</div>
-                <div class="slide">PHP</div>
-                <div class="slide">WordPress</div>
-                <div class="slide">DNS</div>
-                <div class="slide">SSL</div>
-                <div class="slide">Backups</div>
-                <div class="slide">Migrations</div>
-                <div class="slide">Mailchimp</div>
-                <div class="slide">Zoho CRM</div>
-
-                <!-- Duplicate slides for smooth loop -->
-                <div class="slide">HTML</div>
-                <div class="slide">CSS</div>
-                <div class="slide">PHP</div>
-                <div class="slide">WordPress</div>
-                <div class="slide">DNS</div>
-                <div class="slide">SSL</div>
-                <div class="slide">Backups</div>
-                <div class="slide">Migrations</div>
-                <div class="slide">Mailchimp</div>
-                <div class="slide">Zoho CRM</div>
-
+        <div class="hero-image-wrap">
+          <div class="hero-image-frame">
+            <!-- Replace with your photo: <img src="images/Adolph.jpg" alt="Adolph"> -->
+            <div class="hero-avatar-placeholder">
+              <i class="fa-regular fa-circle-user"></i>
+              <span>Adolph</span>
             </div>
+          </div>
+          <div class="hero-card">
+            <i class="fa-solid fa-code"></i>
+            <div>
+              <div class="hero-card-text">3+ Years</div>
+              <div class="hero-card-sub">Development</div>
+            </div>
+          </div>
+          <div class="hero-card">
+            <i class="fa-solid fa-star" style="color:#f59e0b"></i>
+            <div>
+              <div class="hero-card-text">50+ Projects</div>
+              <div class="hero-card-sub">Delivered</div>
+            </div>
+          </div>
         </div>
 
+      </div>
     </div>
-</section>
-<!-- Skills Slider Section End -->
+  </section>
 
-<!-- About Section Start -->
-<section class="about fade-in" id="about">
-    <div class="container about-container">
+  <!-- ═══════════════════════════════════ SKILLS SLIDER -->
+  <section class="skills-slider fade-in">
+    <div class="container">
+      <span class="section-label center">Tech Stack</span>
+      <h2 class="section-title center">Technologies & Platforms</h2>
+    </div>
+    <div class="slider-wrapper">
+      <div class="slide-track">
+        <!-- Set 1 -->
+        <div class="slide slide-html"><i class="fab fa-html5"></i> HTML5</div>
+        <div class="slide slide-css"><i class="fab fa-css3-alt"></i> CSS3</div>
+        <div class="slide slide-php"><i class="fab fa-php"></i> PHP</div>
+        <div class="slide slide-wp"><i class="fab fa-wordpress"></i> WordPress</div>
+        <div class="slide slide-dns"><i class="fa-solid fa-server"></i> DNS</div>
+        <div class="slide slide-ssl"><i class="fa-solid fa-lock"></i> SSL</div>
+        <div class="slide slide-back"><i class="fa-solid fa-database"></i> Backups</div>
+        <div class="slide slide-mig"><i class="fa-solid fa-right-left"></i> Migrations</div>
+        <div class="slide slide-mail"><i class="fa-brands fa-mailchimp"></i> Mailchimp</div>
+        <div class="slide slide-zoho"><i class="fa-solid fa-chart-pie"></i> Zoho CRM</div>
+        <!-- Set 2 — duplicate for seamless infinite loop -->
+        <div class="slide slide-html"><i class="fab fa-html5"></i> HTML5</div>
+        <div class="slide slide-css"><i class="fab fa-css3-alt"></i> CSS3</div>
+        <div class="slide slide-php"><i class="fab fa-php"></i> PHP</div>
+        <div class="slide slide-wp"><i class="fab fa-wordpress"></i> WordPress</div>
+        <div class="slide slide-dns"><i class="fa-solid fa-server"></i> DNS</div>
+        <div class="slide slide-ssl"><i class="fa-solid fa-lock"></i> SSL</div>
+        <div class="slide slide-back"><i class="fa-solid fa-database"></i> Backups</div>
+        <div class="slide slide-mig"><i class="fa-solid fa-right-left"></i> Migrations</div>
+        <div class="slide slide-mail"><i class="fa-brands fa-mailchimp"></i> Mailchimp</div>
+        <div class="slide slide-zoho"><i class="fa-solid fa-chart-pie"></i> Zoho CRM</div>
+      </div>
+    </div>
+  </section>
 
-        <!-- About Image -->
-        <div class="about-image">
-            <img src="images/adolph.jpg" alt="Adolph - Web Developer">
+  <!-- ═══════════════════════════════════ ABOUT -->
+  <section class="about fade-in" id="about">
+    <div class="container">
+      <div class="about-container">
+
+        <div class="about-image-wrap">
+          <div class="about-image-frame">
+            <!-- Replace with your photo: <img src="images/adolph.jpg" alt="Adolph"> -->
+            <div class="about-avatar-placeholder">
+              <i class="fa-regular fa-circle-user"></i>
+              <span>Your photo here</span>
+            </div>
+          </div>
+          <div class="about-decor"></div>
         </div>
 
-        <!-- About Content -->
         <div class="about-content">
-            <h2 class="section-title">About Me</h2>
+          <span class="section-label">Who I am</span>
+          <h2 class="section-title">About Me</h2>
 
-            <p>
-                I am a passionate Web Developer with experience in building and
-                maintaining responsive websites and web applications. I enjoy
-                turning ideas into functional, user-friendly digital solutions.
-            </p>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="num">3+</span>
+              <span class="lbl">Years Exp.</span>
+            </div>
+            <div class="stat-card">
+              <span class="num">50+</span>
+              <span class="lbl">Projects</span>
+            </div>
+            <div class="stat-card">
+              <span class="num">100%</span>
+              <span class="lbl">Dedication</span>
+            </div>
+          </div>
 
-            <p>
-                I have hands-on experience with HTML, CSS, JavaScript, PHP, and
-                WordPress, as well as managing hosting-related tasks such as DNS,
-                SSL certificates, backups, website migrations, and email systems.
-            </p>
+          <p>I am a passionate Web Developer with experience building and maintaining
+             responsive websites and web applications. I enjoy turning ideas into
+             functional, user-friendly digital solutions.</p>
 
-            <p>
-                I am always eager to learn new technologies, improve my skills,
-                and contribute to meaningful projects that make an impact.
-            </p>
+          <p>I have hands-on experience with HTML, CSS, JavaScript, PHP, and WordPress,
+             as well as managing hosting tasks such as DNS, SSL certificates, backups,
+             website migrations, and email systems.</p>
 
-            <a href="#contact" class="btn">Contact Me</a>
+          <p>I'm always eager to learn new technologies, improve my skills, and contribute
+             to meaningful projects that make a lasting impact.</p>
+
+          <a href="#contact" class="btn btn-about">
+            <i class="fa-solid fa-envelope"></i> Let's Talk
+          </a>
         </div>
 
+      </div>
     </div>
-</section>
-<!-- About Section End -->
+  </section>
 
+  <!-- ═══════════════════════════════════ SKILLS GRID -->
+  <section class="skills-grid-section fade-in" id="skills">
+    <div class="container">
+      <span class="section-label center">What I Know</span>
+      <h2 class="section-title center">Core Skills</h2>
 
-            <h1>About me</h1>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fab fa-html5" style="color:#e34c26"></i>
+          <h3>HTML5 & CSS3</h3>
+          <p>Semantic markup, Flexbox, Grid, responsive layouts</p>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-js-square" style="color:#f7df1e"></i>
+          <h3>JavaScript</h3>
+          <p>DOM manipulation, animations, interactive features</p>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-php" style="color:#8892be"></i>
+          <h3>PHP</h3>
+          <p>Server-side scripting, form handling, APIs</p>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-wordpress" style="color:#21759b"></i>
+          <h3>WordPress</h3>
+          <p>Custom themes, plugins, WooCommerce, performance</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-server" style="color:#38bdf8"></i>
+          <h3>Hosting & DNS</h3>
+          <p>Domain setup, DNS records, cPanel, email config</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-lock" style="color:#22c55e"></i>
+          <h3>SSL & Security</h3>
+          <p>SSL certificates, HTTPS setup, site hardening</p>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-mailchimp" style="color:#f43f5e"></i>
+          <h3>Email Marketing</h3>
+          <p>Mailchimp campaigns, automations, list management</p>
+        </div>
+        <div class="skill-card">
+          <i class="fa-solid fa-chart-pie" style="color:#e05d27"></i>
+          <h3>Zoho CRM</h3>
+          <p>Lead management, pipelines, digital marketing flows</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <p>I am a pasionate person, hard working.</p>
+  <!-- ═══════════════════════════════════ CONTACT -->
+  <section class="contact fade-in" id="contact">
+    <div class="container">
+      <span class="section-label">Get in Touch</span>
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="lead">
+        Have a project in mind or just want to chat? I'm always open to new
+        opportunities and exciting collaborations.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:adolph@email.com" class="contact-link">
+          <i class="fa-solid fa-envelope"></i> adolph@email.com
+        </a>
+        <a href="https://linkedin.com" class="contact-link" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com" class="contact-link" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="tel:+27000000000" class="contact-link">
+          <i class="fa-solid fa-phone"></i> Call Me
+        </a>
+      </div>
+    </div>
+  </section>
 
-            <script src="js/main.js">javascript</script>
-        </body>
+  <!-- ═══════════════════════════════════ FOOTER -->
+  <footer>
+    <p>&copy; 2026 <span>Adolph</span>. Built with passion &amp; clean code.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
 </html>
