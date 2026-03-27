@@ -15,15 +15,15 @@
   <!-- ═══════════════════════════════════ HEADER -->
   <header class="header" id="header">
     <div class="container">
-      <div class="logo">
-        <a href="#home">Adolph<span>.</span></a>
-      </div>
+      <div class="logo"><a href="#home">Adolph<span>.</span></a></div>
       <nav class="nav">
         <ul>
-          <li><a href="#home"         class="active">Home</a></li>
+          <li><a href="#home" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#certificates">Certificates</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -47,8 +47,7 @@
           <div class="hero-cta">
             <a href="#projects" class="btn"><i class="fa-solid fa-eye"></i> View My Work</a>
             <a href="#contact"  class="btn btn-ghost"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
-            <!-- Replace cv/Adolph-CV.pdf with your real CV file path -->
-            <a href="assets/images/Adolphus_Hlawulani_Ngobeni_CV.pdf" class="btn btn-download" download>
+            <a href="cv/Adolph-CV.pdf" class="btn btn-download" download>
               <i class="fa-solid fa-download"></i> Download CV
             </a>
           </div>
@@ -56,7 +55,11 @@
 
         <div class="hero-image-wrap">
           <div class="hero-image-frame">
-            <img src="assets/images/Adolph.jpeg" alt="Adolph" width="160px" height="360px">
+            <!--
+              TO ADD YOUR PHOTO — replace everything inside .hero-image-frame with:
+              <img src="images/Adolph.jpg" alt="Adolph">
+              The image will auto-fit, crop to centre, and keep the animated border.
+            -->
             <div class="hero-avatar-placeholder">
               <i class="fa-regular fa-circle-user"></i>
               <span>Adolph</span>
@@ -64,17 +67,11 @@
           </div>
           <div class="hero-card">
             <i class="fa-solid fa-code"></i>
-            <div>
-              <div class="hero-card-text">3+ Years</div>
-              <div class="hero-card-sub">Development</div>
-            </div>
+            <div><div class="hero-card-text">3+ Years</div><div class="hero-card-sub">Development</div></div>
           </div>
           <div class="hero-card">
             <i class="fa-solid fa-star" style="color:#f59e0b"></i>
-            <div>
-              <div class="hero-card-text">10+ Projects</div>
-              <div class="hero-card-sub">Delivered</div>
-            </div>
+            <div><div class="hero-card-text">50+ Projects</div><div class="hero-card-sub">Delivered</div></div>
           </div>
         </div>
 
@@ -90,21 +87,31 @@
     </div>
     <div class="slider-wrapper">
       <div class="slide-track">
+        <!-- Set 1 -->
+        <!--
+          TO USE AN IMAGE in a slide, replace the <i> tag with:
+          <img src="images/html5.png" alt="HTML5" class="slide-img">
+          The .slide-img class handles sizing automatically.
+        -->
         <div class="slide slide-html"><i class="fab fa-html5"></i> HTML5</div>
         <div class="slide slide-css"><i class="fab fa-css3-alt"></i> CSS3</div>
+        <div class="slide slide-js"><i class="fab fa-js-square"></i> JavaScript</div>
         <div class="slide slide-php"><i class="fab fa-php"></i> PHP</div>
         <div class="slide slide-wp"><i class="fab fa-wordpress"></i> WordPress</div>
-        <div class="slide slide-wp"><i class="fab fa-microsoft"></i> SharePoint</div>
+        <div class="slide slide-sp"><i class="fab fa-microsoft"></i> SharePoint</div>
         <div class="slide slide-dns"><i class="fa-solid fa-server"></i> DNS</div>
         <div class="slide slide-ssl"><i class="fa-solid fa-lock"></i> SSL</div>
         <div class="slide slide-back"><i class="fa-solid fa-database"></i> Backups</div>
         <div class="slide slide-mig"><i class="fa-solid fa-right-left"></i> Migrations</div>
         <div class="slide slide-mail"><i class="fa-brands fa-mailchimp"></i> Mailchimp</div>
         <div class="slide slide-zoho"><i class="fa-solid fa-chart-pie"></i> Zoho CRM</div>
+        <!-- Set 2 — duplicate for seamless infinite loop -->
         <div class="slide slide-html"><i class="fab fa-html5"></i> HTML5</div>
         <div class="slide slide-css"><i class="fab fa-css3-alt"></i> CSS3</div>
+        <div class="slide slide-js"><i class="fab fa-js-square"></i> JavaScript</div>
         <div class="slide slide-php"><i class="fab fa-php"></i> PHP</div>
         <div class="slide slide-wp"><i class="fab fa-wordpress"></i> WordPress</div>
+        <div class="slide slide-sp"><i class="fab fa-microsoft"></i> SharePoint</div>
         <div class="slide slide-dns"><i class="fa-solid fa-server"></i> DNS</div>
         <div class="slide slide-ssl"><i class="fa-solid fa-lock"></i> SSL</div>
         <div class="slide slide-back"><i class="fa-solid fa-database"></i> Backups</div>
@@ -122,7 +129,11 @@
 
         <div class="about-image-wrap">
           <div class="about-image-frame">
-            <!-- Replace: <img src="images/adolph.jpg" alt="Adolph"> -->
+            <!--
+              TO ADD YOUR PHOTO — replace everything inside .about-image-frame with:
+              <img src="images/adolph.jpg" alt="Adolph">
+              It will fill the frame, crop to centre, and zoom gently on hover.
+            -->
             <div class="about-avatar-placeholder">
               <i class="fa-regular fa-circle-user"></i>
               <span>Your photo here</span>
@@ -149,12 +160,19 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════ SKILLS -->
+  <!-- ═══════════════════════════════════ SKILLS — progress bars -->
   <section class="skills-grid-section fade-in" id="skills">
     <div class="container">
       <span class="section-label center">What I Know</span>
       <h2 class="section-title center">Core Skills</h2>
       <div class="skills-bars-grid">
+
+        <!--
+          TO USE AN IMAGE for the skill icon — replace the <i> tag inside
+          .skill-bar-icon with:
+          <img src="images/html5.png" alt="HTML5" class="skill-img">
+          The .skill-img class auto-fits it to the right size.
+        -->
 
         <div class="skill-bar-card">
           <div class="skill-bar-header">
@@ -170,7 +188,7 @@
           <div class="skill-bar-header">
             <span class="skill-bar-icon"><i class="fab fa-js-square" style="color:#f7df1e"></i></span>
             <span class="skill-bar-name">JavaScript</span>
-            <span class="skill-bar-pct">70%</span>
+            <span class="skill-bar-pct">75%</span>
           </div>
           <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="75"></div></div>
           <p class="skill-bar-desc">DOM manipulation, animations, interactive features</p>
@@ -198,12 +216,12 @@
 
         <div class="skill-bar-card">
           <div class="skill-bar-header">
-            <span class=skill-bar-icon"><i class="fab fa-microsoft" style="color:#554851d"></i></span>
-            <span class="skills-bar-name">SharePoint</span>
-            <span class=Skill-bar-pct">80%</span>
+            <span class="skill-bar-icon"><i class="fab fa-microsoft" style="color:#0078d4"></i></span>
+            <span class="skill-bar-name">SharePoint</span>
+            <span class="skill-bar-pct">80%</span>
           </div>
           <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="80"></div></div>
-          <p class="skill-bar-desc">Design Intranet for HR, Sharing Document</p>
+          <p class="skill-bar-desc">Intranet sites, document libraries, M365 integration</p>
         </div>
 
         <div class="skill-bar-card">
@@ -250,17 +268,110 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════ WORK EXPERIENCE -->
+  <section class="experience fade-in" id="experience">
+    <div class="container">
+      <span class="section-label center">Career</span>
+      <h2 class="section-title center">Work Experience</h2>
+      <p class="section-intro">My professional journey and the roles that shaped my skills.</p>
+
+      <div class="timeline">
+
+        <!-- EXPERIENCE 1 — most recent first -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <div class="tl-logo-wrap">
+                <!--
+                  TO ADD COMPANY LOGO — replace the icon below with:
+                  <img src="images/oneconnect-logo.png" alt="OneConnect" class="tl-logo-img">
+                -->
+                <div class="tl-logo-placeholder"><i class="fa-solid fa-building"></i></div>
+              </div>
+              <div class="tl-header-text">
+                <h3 class="tl-role">IT / Web Developer</h3>
+                <span class="tl-company">OneConnect</span>
+                <span class="tl-period"><i class="fa-regular fa-calendar"></i> 2022 — Present · Pretoria, SA</span>
+              </div>
+              <span class="tl-badge current">Current</span>
+            </div>
+            <p class="tl-desc">
+              Working as part of the IT and digital team at OneConnect, responsible for building
+              and maintaining internal and client-facing web solutions, managing Microsoft 365
+              and SharePoint environments, and supporting digital marketing initiatives.
+            </p>
+            <ul class="tl-achievements">
+              <li><i class="fa-solid fa-check"></i> Built and maintained SharePoint intranet sites for internal teams</li>
+              <li><i class="fa-solid fa-check"></i> Developed and updated WordPress websites for clients</li>
+              <li><i class="fa-solid fa-check"></i> Managed DNS, SSL certificates, hosting migrations, and email systems</li>
+              <li><i class="fa-solid fa-check"></i> Assisted with Zoho CRM setup and Mailchimp email campaigns</li>
+              <li><i class="fa-solid fa-check"></i> Provided IT support and troubleshooting across the organisation</li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tag">SharePoint</span>
+              <span class="tag">WordPress</span>
+              <span class="tag">M365</span>
+              <span class="tag">DNS</span>
+              <span class="tag">SSL</span>
+              <span class="tag">Zoho CRM</span>
+              <span class="tag">Mailchimp</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 2 — add more roles here, replace content as needed -->
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <div class="tl-logo-wrap">
+                <div class="tl-logo-placeholder"><i class="fa-solid fa-laptop-code"></i></div>
+              </div>
+              <div class="tl-header-text">
+                <h3 class="tl-role">Junior Web Developer</h3>
+                <span class="tl-company">Previous Company / Freelance</span>
+                <span class="tl-period"><i class="fa-regular fa-calendar"></i> 2020 — 2022</span>
+              </div>
+            </div>
+            <p class="tl-desc">
+              Update this section with your previous role details. Describe your responsibilities,
+              what you built, and the impact you made.
+            </p>
+            <ul class="tl-achievements">
+              <li><i class="fa-solid fa-check"></i> Add your key achievement here</li>
+              <li><i class="fa-solid fa-check"></i> Add another achievement here</li>
+              <li><i class="fa-solid fa-check"></i> Add another achievement here</li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════════════════════════════ PROJECTS -->
   <section class="projects fade-in" id="projects">
     <div class="container">
       <span class="section-label center">My Work</span>
       <h2 class="section-title center">Featured Projects</h2>
-      <p class="projects-intro">A selection of websites and digital solutions I've built for clients and personal projects.</p>
+      <p class="section-intro">A selection of websites and digital solutions I've built for clients and personal projects.</p>
       <div class="projects-grid">
 
-        <a href="https://oneconnect.co.za" class="project-card" target="_blank">
+        <!--
+          TO ADD A REAL PROJECT SCREENSHOT — replace the .project-img-placeholder div with:
+          <img src="images/project1.jpg" alt="Project Name">
+          The image will auto-fit, fill the card area, and zoom on hover.
+          Recommended image size: 800 × 500 px
+        -->
+
+        <a href="https://your-project-1.com" class="project-card" target="_blank">
           <div class="project-card-img">
-            <img src="assets/images/OC Logo-01.png" alt="Adolph">
             <div class="project-img-placeholder"><i class="fa-solid fa-globe"></i></div>
             <div class="project-overlay"><span><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</span></div>
           </div>
@@ -335,140 +446,343 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════ TESTIMONIALS -->
+  <!-- ═══════════════════════════════════ CERTIFICATES -->
+  <section class="certificates fade-in" id="certificates">
+    <div class="container">
+      <span class="section-label center">Credentials</span>
+      <h2 class="section-title center">Certificates &amp; Qualifications</h2>
+      <p class="section-intro">Formal training and certifications that back my skills.</p>
+
+      <div class="cert-grid">
+
+        <!--
+          HOW TO USE:
+          • Set href on .cert-card to the URL or PDF of the certificate so
+            clicking the card opens it (use href="#" if not available yet).
+          • Replace the .cert-img-placeholder div with a real certificate
+            thumbnail image:
+            <img src="images/cert-google.jpg" alt="Google Certificate">
+            Recommended size: 600 × 400 px
+          • Update the issuer logo icon, title, issuer name, date, and tags.
+
+          NOTE: There is NO download button — the card itself links to the cert.
+        -->
+
+        <!-- CERT 1 -->
+        <a href="#" class="cert-card" target="_blank">
+          <div class="cert-img-area">
+            <!--  Replace with: <img src="images/cert1.jpg" alt="Certificate"> -->
+            <div class="cert-img-placeholder">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="cert-overlay">
+              <span><i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-issuer-row">
+              <div class="cert-issuer-icon"><i class="fab fa-google" style="color:#4285f4"></i></div>
+              <span class="cert-issuer-name">Google</span>
+            </div>
+            <h3 class="cert-title">Google Digital Marketing &amp; E-Commerce</h3>
+            <span class="cert-date"><i class="fa-regular fa-calendar-check"></i> 2023</span>
+            <div class="cert-tags">
+              <span class="tag">Digital Marketing</span>
+              <span class="tag">SEO</span>
+              <span class="tag">E-Commerce</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CERT 2 -->
+        <a href="#" class="cert-card" target="_blank">
+          <div class="cert-img-area">
+            <div class="cert-img-placeholder">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="cert-overlay">
+              <span><i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-issuer-row">
+              <div class="cert-issuer-icon"><i class="fab fa-microsoft" style="color:#0078d4"></i></div>
+              <span class="cert-issuer-name">Microsoft</span>
+            </div>
+            <h3 class="cert-title">Microsoft 365 Fundamentals (MS-900)</h3>
+            <span class="cert-date"><i class="fa-regular fa-calendar-check"></i> 2023</span>
+            <div class="cert-tags">
+              <span class="tag">Microsoft 365</span>
+              <span class="tag">SharePoint</span>
+              <span class="tag">Teams</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CERT 3 -->
+        <a href="#" class="cert-card" target="_blank">
+          <div class="cert-img-area">
+            <div class="cert-img-placeholder">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="cert-overlay">
+              <span><i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-issuer-row">
+              <div class="cert-issuer-icon"><i class="fab fa-wordpress" style="color:#21759b"></i></div>
+              <span class="cert-issuer-name">WordPress / Udemy</span>
+            </div>
+            <h3 class="cert-title">Complete WordPress Developer Course</h3>
+            <span class="cert-date"><i class="fa-regular fa-calendar-check"></i> 2022</span>
+            <div class="cert-tags">
+              <span class="tag">WordPress</span>
+              <span class="tag">PHP</span>
+              <span class="tag">WooCommerce</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CERT 4 -->
+        <a href="#" class="cert-card" target="_blank">
+          <div class="cert-img-area">
+            <div class="cert-img-placeholder">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="cert-overlay">
+              <span><i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-issuer-row">
+              <div class="cert-issuer-icon"><i class="fa-solid fa-envelope" style="color:#f43f5e"></i></div>
+              <span class="cert-issuer-name">Mailchimp / Academy</span>
+            </div>
+            <h3 class="cert-title">Mailchimp Email Marketing Certification</h3>
+            <span class="cert-date"><i class="fa-regular fa-calendar-check"></i> 2022</span>
+            <div class="cert-tags">
+              <span class="tag">Email Marketing</span>
+              <span class="tag">Automation</span>
+              <span class="tag">Analytics</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- CERT 5 — add as many as you need -->
+        <a href="#" class="cert-card" target="_blank">
+          <div class="cert-img-area">
+            <div class="cert-img-placeholder">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="cert-overlay">
+              <span><i class="fa-solid fa-arrow-up-right-from-square"></i> View Certificate</span>
+            </div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-issuer-row">
+              <div class="cert-issuer-icon"><i class="fa-solid fa-graduation-cap" style="color:#a78bfa"></i></div>
+              <span class="cert-issuer-name">Your Institution</span>
+            </div>
+            <h3 class="cert-title">Your Certificate Title Here</h3>
+            <span class="cert-date"><i class="fa-regular fa-calendar-check"></i> 2021</span>
+            <div class="cert-tags">
+              <span class="tag">Skill</span>
+              <span class="tag">Skill</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ TESTIMONIALS — flip cards -->
   <section class="testimonials fade-in" id="testimonials">
     <div class="container">
       <span class="section-label center">Kind Words</span>
       <h2 class="section-title center">What Clients Say</h2>
-      <p class="testimonials-intro">Real feedback from people I've had the privilege of working with.</p>
+      <p class="section-intro">Hover or tap a card to read the full review.</p>
 
-      <div class="testimonials-grid">
+      <div class="flip-grid">
 
-        <!-- TESTIMONIAL 1 -->
-        <div class="testi-card">
-          <div class="testi-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <p class="testi-quote">
-            "Adolph completely transformed our online presence. The website he built is fast,
-            beautiful, and our enquiries have doubled since launch. Highly professional
-            throughout the entire project."
-          </p>
-          <div class="testi-author">
-            <div class="testi-avatar">SM</div>
-            <div>
-              <span class="testi-name">Sarah Mokoena</span>
-              <span class="testi-role">CEO, Mokoena Consulting</span>
+        <!-- FLIP CARD 1 -->
+        <div class="flip-card" tabindex="0">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <!--
+                TO USE A REAL CLIENT PHOTO — replace .flip-avatar div with:
+                <img src="images/sarah.jpg" alt="Sarah" class="flip-avatar-img">
+              -->
+              <div class="flip-avatar">SM</div>
+              <h3 class="flip-name">Sarah Mokoena</h3>
+              <p class="flip-role">CEO, Mokoena Consulting</p>
+              <p class="flip-hint"><i class="fa-solid fa-rotate"></i> Hover to read</p>
+            </div>
+            <div class="flip-back">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="flip-quote">"Adolph completely transformed our online presence. The website he built is fast, beautiful, and our enquiries have doubled since launch. Highly professional throughout."</p>
+              <div class="flip-author-mini">
+                <span class="flip-name-mini">Sarah Mokoena</span>
+                <span class="flip-role-mini">CEO, Mokoena Consulting</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- TESTIMONIAL 2 -->
-        <div class="testi-card">
-          <div class="testi-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <p class="testi-quote">
-            "Our WooCommerce store went live on time and within budget. Adolph handled
-            everything — from DNS and SSL to custom features. I wouldn't hesitate to
-            recommend him to anyone."
-          </p>
-          <div class="testi-author">
-            <div class="testi-avatar">JN</div>
-            <div>
-              <span class="testi-name">James Nkosi</span>
-              <span class="testi-role">Owner, Urban Threads Store</span>
+        <!-- FLIP CARD 2 -->
+        <div class="flip-card" tabindex="0">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="flip-avatar">JN</div>
+              <h3 class="flip-name">James Nkosi</h3>
+              <p class="flip-role">Owner, Urban Threads</p>
+              <p class="flip-hint"><i class="fa-solid fa-rotate"></i> Hover to read</p>
+            </div>
+            <div class="flip-back">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="flip-quote">"Our WooCommerce store went live on time and within budget. Adolph handled everything — DNS, SSL, custom features. I wouldn't hesitate to recommend him."</p>
+              <div class="flip-author-mini">
+                <span class="flip-name-mini">James Nkosi</span>
+                <span class="flip-role-mini">Owner, Urban Threads</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- TESTIMONIAL 3 -->
-        <div class="testi-card">
-          <div class="testi-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
-          </div>
-          <p class="testi-quote">
-            "The Mailchimp campaigns Adolph set up for us generated a 40% open rate —
-            way above industry average. His knowledge of digital marketing is exceptional
-            and he's always available when you need him."
-          </p>
-          <div class="testi-author">
-            <div class="testi-avatar">LP</div>
-            <div>
-              <span class="testi-name">Lerato Phiri</span>
-              <span class="testi-role">Marketing Manager, Phiri &amp; Partners</span>
+        <!-- FLIP CARD 3 -->
+        <div class="flip-card" tabindex="0">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+              <div class="flip-avatar">LP</div>
+              <h3 class="flip-name">Lerato Phiri</h3>
+              <p class="flip-role">Marketing Manager, Phiri &amp; Partners</p>
+              <p class="flip-hint"><i class="fa-solid fa-rotate"></i> Hover to read</p>
+            </div>
+            <div class="flip-back">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+              <p class="flip-quote">"The Mailchimp campaigns Adolph set up generated a 40% open rate — way above industry average. His knowledge of digital marketing is exceptional."</p>
+              <div class="flip-author-mini">
+                <span class="flip-name-mini">Lerato Phiri</span>
+                <span class="flip-role-mini">Marketing Manager, Phiri &amp; Partners</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- TESTIMONIAL 4 -->
-        <div class="testi-card">
-          <div class="testi-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <p class="testi-quote">
-            "Adolph migrated our entire website to a new host with zero downtime.
-            He kept us informed at every step and the new site loads so much faster.
-            A true professional you can trust."
-          </p>
-          <div class="testi-author">
-            <div class="testi-avatar">TM</div>
-            <div>
-              <span class="testi-name">Thabo Mthembu</span>
-              <span class="testi-role">IT Director, Mthembu Group</span>
+        <!-- FLIP CARD 4 -->
+        <div class="flip-card" tabindex="0">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="flip-avatar">TM</div>
+              <h3 class="flip-name">Thabo Mthembu</h3>
+              <p class="flip-role">IT Director, Mthembu Group</p>
+              <p class="flip-hint"><i class="fa-solid fa-rotate"></i> Hover to read</p>
+            </div>
+            <div class="flip-back">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="flip-quote">"Adolph migrated our entire website with zero downtime. He kept us informed at every step and the new site loads so much faster. A true professional."</p>
+              <div class="flip-author-mini">
+                <span class="flip-name-mini">Thabo Mthembu</span>
+                <span class="flip-role-mini">IT Director, Mthembu Group</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- TESTIMONIAL 5 -->
-        <div class="testi-card">
-          <div class="testi-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <p class="testi-quote">
-            "Working with Adolph on our Zoho CRM setup was a game changer. Our sales
-            pipeline is now automated and our team spends way less time on admin.
-            Brilliant work, delivered fast."
-          </p>
-          <div class="testi-author">
-            <div class="testi-avatar">NZ</div>
-            <div>
-              <span class="testi-name">Nomsa Zulu</span>
-              <span class="testi-role">Sales Director, ZuluTech Solutions</span>
+        <!-- FLIP CARD 5 -->
+        <div class="flip-card" tabindex="0">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="flip-avatar">NZ</div>
+              <h3 class="flip-name">Nomsa Zulu</h3>
+              <p class="flip-role">Sales Director, ZuluTech Solutions</p>
+              <p class="flip-hint"><i class="fa-solid fa-rotate"></i> Hover to read</p>
+            </div>
+            <div class="flip-back">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="flip-quote">"The Zoho CRM setup Adolph did for us was a game changer. Our pipeline is now automated and the team spends way less time on admin. Brilliant work."</p>
+              <div class="flip-author-mini">
+                <span class="flip-name-mini">Nomsa Zulu</span>
+                <span class="flip-role-mini">Sales Director, ZuluTech Solutions</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- TESTIMONIAL 6 -->
-        <!--<div class="testi-card">
-          <div class="testi-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <p class="testi-quote">
-            "From the initial brief to the final delivery, Adolph was communicative,
-            creative, and thorough. Our new WordPress site reflects exactly who we
-            are as a brand. Could not be happier."
-          </p>
-          <div class="testi-author">
-            <div class="testi-avatar">KD</div>
-            <div>
-              <span class="testi-name">Karabo Dlamini</span>
-              <span class="testi-role">Founder, Dlamini Creative Studio</span>
+        <!-- FLIP CARD 6 -->
+        <div class="flip-card" tabindex="0">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="flip-avatar">KD</div>
+              <h3 class="flip-name">Karabo Dlamini</h3>
+              <p class="flip-role">Founder, Dlamini Creative Studio</p>
+              <p class="flip-hint"><i class="fa-solid fa-rotate"></i> Hover to read</p>
+            </div>
+            <div class="flip-back">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="flip-quote">"From brief to delivery, Adolph was communicative, creative, and thorough. Our new WordPress site reflects exactly who we are as a brand. Could not be happier."</p>
+              <div class="flip-author-mini">
+                <span class="flip-name-mini">Karabo Dlamini</span>
+                <span class="flip-role-mini">Founder, Dlamini Creative Studio</span>
+              </div>
             </div>
           </div>
-        </div> -->
+        </div>
 
       </div>
     </div>
@@ -477,78 +791,43 @@
   <!-- ═══════════════════════════════════ CONTACT -->
   <section class="contact fade-in" id="contact">
     <div class="container">
-
       <span class="section-label center">Get in Touch</span>
       <h2 class="section-title center">Let's Work Together</h2>
-      <p class="contact-intro">
-        Have a project in mind? Fill in the form below, send a WhatsApp, or reach out
-        directly — I usually respond within a few hours.
-      </p>
+      <p class="contact-intro">Have a project in mind? Fill in the form, send a WhatsApp, or reach out directly — I usually respond within a few hours.</p>
 
       <div class="contact-layout">
 
-        <!-- LEFT — contact info + WhatsApp -->
         <div class="contact-info">
-
           <h3 class="contact-info-title">Other Ways to Reach Me</h3>
-
           <div class="contact-info-items">
-            <a href="mailto:adolfngobeni6@gmail.com" class="contact-info-item">
+            <a href="mailto:adolph@email.com" class="contact-info-item">
               <div class="ci-icon"><i class="fa-solid fa-envelope"></i></div>
-              <div>
-                <span class="ci-label">Email</span>
-                <span class="ci-value">adolph@email.com</span>
-              </div>
+              <div><span class="ci-label">Email</span><span class="ci-value">adolph@email.com</span></div>
             </a>
-
-            <!-- ✅ WhatsApp — replace 27000000000 with your number (country code, no +) -->
-            <a href="https://wa.me/+27 633 436 756?text=Hi%20Adolph%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
-               class="contact-info-item contact-whatsapp" target="_blank">
+            <a href="https://wa.me/27000000000?text=Hi%20Adolph%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." class="contact-info-item contact-whatsapp" target="_blank">
               <div class="ci-icon ci-icon-wa"><i class="fab fa-whatsapp"></i></div>
-              <div>
-                <span class="ci-label">WhatsApp</span>
-                <span class="ci-value">Chat with me directly</span>
-              </div>
+              <div><span class="ci-label">WhatsApp</span><span class="ci-value">Chat with me directly</span></div>
             </a>
-
             <a href="https://linkedin.com" class="contact-info-item" target="_blank">
               <div class="ci-icon"><i class="fab fa-linkedin"></i></div>
-              <div>
-                <span class="ci-label">LinkedIn</span>
-                <span class="ci-value">Connect with me</span>
-              </div>
+              <div><span class="ci-label">LinkedIn</span><span class="ci-value">Connect with me</span></div>
             </a>
-
-            <a href="https://adolfngobeni-coder.github.io/Portfolio" class="contact-info-item" target="_blank">
+            <a href="https://github.com" class="contact-info-item" target="_blank">
               <div class="ci-icon"><i class="fab fa-github"></i></div>
-              <div>
-                <span class="ci-label">GitHub</span>
-                <span class="ci-value">See my code</span>
-              </div>
+              <div><span class="ci-label">GitHub</span><span class="ci-value">See my code</span></div>
             </a>
-
-            <a href="tel:+27 633 436 756" class="contact-info-item">
+            <a href="tel:+27000000000" class="contact-info-item">
               <div class="ci-icon"><i class="fa-solid fa-phone"></i></div>
-              <div>
-                <span class="ci-label">Phone</span>
-                <span class="ci-value">+27 633 436 756</span>
-              </div>
+              <div><span class="ci-label">Phone</span><span class="ci-value">+27 000 000 000</span></div>
             </a>
           </div>
-
-          <!-- WhatsApp big CTA -->
-          <a href="https://wa.me/+27 063 343 6756?text=Hi%20Adolph%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
-             class="btn-whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-            Message me on WhatsApp
+          <a href="https://wa.me/27000000000?text=Hi%20Adolph%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." class="btn-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i> Message me on WhatsApp
           </a>
-
         </div>
 
-        <!-- RIGHT — contact form -->
         <div class="contact-form-wrap">
           <form class="contact-form" id="contactForm" novalidate>
-
             <div class="form-row">
               <div class="form-group">
                 <label for="fname">First Name</label>
@@ -559,17 +838,14 @@
                 <input type="text" id="lname" name="lname" placeholder="Doe" required>
               </div>
             </div>
-
             <div class="form-group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="adolfngobeno6@gmail.com" required>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
             </div>
-
             <div class="form-group">
               <label for="phone">Phone / WhatsApp <span class="optional">(optional)</span></label>
-              <input type="tel" id="phone" name="phone" placeholder="+27 063 343 6756">
+              <input type="tel" id="phone" name="phone" placeholder="+27 000 000 000">
             </div>
-
             <div class="form-group">
               <label for="service">Service Interested In</label>
               <select id="service" name="service">
@@ -577,6 +853,7 @@
                 <option>Website Design &amp; Development</option>
                 <option>WordPress Development</option>
                 <option>E-Commerce / WooCommerce</option>
+                <option>SharePoint / Microsoft 365</option>
                 <option>Email Marketing (Mailchimp)</option>
                 <option>CRM Setup (Zoho)</option>
                 <option>Hosting, DNS &amp; SSL</option>
@@ -584,21 +861,14 @@
                 <option>Other</option>
               </select>
             </div>
-
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5"
-                        placeholder="Tell me about your project, timeline, and budget…" required></textarea>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, timeline, and budget…" required></textarea>
             </div>
-
             <button type="submit" class="btn btn-submit">
-              <i class="fa-solid fa-paper-plane"></i>
-              <span>Send Message</span>
+              <i class="fa-solid fa-paper-plane"></i> <span>Send Message</span>
             </button>
-
-            <!-- Success / error feedback -->
             <div class="form-feedback" id="formFeedback" aria-live="polite"></div>
-
           </form>
         </div>
 
@@ -611,9 +881,7 @@
     <p>&copy; 2025 <span>Adolph</span>. Built with passion &amp; clean code.</p>
   </footer>
 
-  <!-- ✅ Floating WhatsApp bubble -->
-  <a href="https://wa.me/+2763 343 6756?text=Hi%20Adolph%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
-     class="wa-bubble" target="_blank" aria-label="Chat on WhatsApp">
+  <a href="https://wa.me/27000000000?text=Hi%20Adolph%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." class="wa-bubble" target="_blank" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
