@@ -1,8 +1,3 @@
-/* ═══════════════════════════════════════════════════════════
-   main.js — Adolph Portfolio
-   ═══════════════════════════════════════════════════════════ */
-
-/* ── Sticky frosted-glass header ───────────────────────────── */
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 40);
@@ -154,7 +149,7 @@ function simulateSubmit(data) {
     `\nMessage:\n${data.message}`
   );
   // ✅ Replace 27000000000 with your real WhatsApp number (no + sign)
-  const waURL = `https://wa.me/27000000000?text=${msg}`;
+  const waURL = `https://wa.me/27633436756?text=${msg}`;
   showFeedback('success', '✅ Opening WhatsApp with your message pre-filled…');
   setTimeout(() => {
     window.open(waURL, '_blank');
