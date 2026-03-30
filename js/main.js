@@ -154,7 +154,7 @@ function simulateSubmit(data) {
     `\nMessage:\n${data.message}`
   );
   // ✅ Replace 27000000000 with your real WhatsApp number (no + sign)
-  const waURL = `https://wa.me/+27 633 436 756?text=${msg}`;
+  const waURL = `https://wa.me/27000000000?text=${msg}`;
   showFeedback('success', '✅ Opening WhatsApp with your message pre-filled…');
   setTimeout(() => {
     window.open(waURL, '_blank');
@@ -167,3 +167,122 @@ function showFeedback(type, msg) {
   feedback.textContent = msg;
   feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
+
+/* ═══════════════════════════════════════════════════════════
+   CV MODAL
+   ═══════════════════════════════════════════════════════════ */
+function openCV() {
+  const modal  = document.getElementById('cvModal');
+  const iframe = document.getElementById('cvFrame');
+
+  // Lazy-load the PDF only when the modal opens (avoids loading on page load)
+  if (!iframe.src || iframe.src === window.location.href) {
+    iframe.src = iframe.getAttribute('data-src');
+  }
+
+  openModal('cvModal');
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CERTIFICATE LIGHTBOX
+   Each .cert-card has:
+     data-cert  = "certificates/cert1.pdf"  (or .jpg/.png)
+     data-title = "Certificate Name"
+   ═══════════════════════════════════════════════════════════ */
+document.querySelectorAll('.cert-card').forEach(card => {
+  // Click
+  card.addEventListener('click', () => openCert(card));
+  // Keyboard — Enter or Space
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openCert(card);
+    }
+  });
+});
+
+function openCert(card) {
+  const src   = card.getAttribute('data-cert');
+  const title = card.getAttribute('data-title') || 'Certificate';
+  const body  = document.getElementById('certModalBody');
+  const modalTitle = document.getElementById('certModalTitle');
+
+  // Update header title
+  modalTitle.innerHTML = `<i class="fa-solid fa-certificate"></i> ${title}`;
+
+  // Show loading spinner first
+  body.innerHTML = `
+    <div class="modal-loading">
+      <i class="fa-solid fa-spinner"></i>
+      <span>Loading certificate…</span>
+    </div>`;
+
+  // Decide how to display based on file extension
+  if (!src || src === '#' || src === '') {
+    body.innerHTML = `
+      <div class="modal-loading">
+        <i class="fa-solid fa-triangle-exclamation" style="color:#f59e0b"></i>
+        <span>No certificate file linked yet.<br>
+          Set <code>data-cert="certificates/yourfile.pdf"</code> on the card.</span>
+      </div>`;
+    openModal('certModal');
+    return;
+  }
+
+  const ext = src.split('.').pop().toLowerCase();
+  const isImage = ['jpg','jpeg','png','webp','gif'].includes(ext);
+
+  if (isImage) {
+    // Display as a zoomable image
+    const img = new Image();
+    img.className = 'cert-lightbox-img';
+    img.alt = title;
+    img.onload  = () => { body.innerHTML = ''; body.appendChild(img); };
+    img.onerror = () => { body.innerHTML = '<div class="modal-loading"><i class="fa-solid fa-circle-exclamation" style="color:#f87171"></i><span>Could not load image.</span></div>'; };
+    img.src = src;
+  } else {
+    // Display as PDF in iframe
+    body.innerHTML = `<iframe src="${src}#toolbar=0&navpanes=0&scrollbar=1" title="${title}" frameborder="0"></iframe>`;
+  }
+
+  openModal('certModal');
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SHARED MODAL HELPERS
+   ═══════════════════════════════════════════════════════════ */
+function openModal(id) {
+  const overlay = document.getElementById(id);
+  overlay.classList.add('open');
+  document.body.classList.add('modal-open');
+
+  // Close on backdrop click
+  overlay.addEventListener('click', function handler(e) {
+    if (e.target === overlay) {
+      closeModal(id);
+      overlay.removeEventListener('click', handler);
+    }
+  });
+}
+
+function closeModal(id) {
+  const overlay = document.getElementById(id);
+  overlay.classList.remove('open');
+  document.body.classList.remove('modal-open');
+
+  // If it's the cert modal, clear the body so it doesn't flash old content
+  if (id === 'certModal') {
+    setTimeout(() => {
+      document.getElementById('certModalBody').innerHTML = '';
+    }, 350); // wait for CSS transition to finish
+  }
+}
+
+// Global Escape key closes any open modal
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    ['cvModal', 'certModal'].forEach(id => {
+      if (document.getElementById(id).classList.contains('open')) closeModal(id);
+    });
+  }
+});
