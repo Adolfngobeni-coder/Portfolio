@@ -750,3 +750,218 @@ footer span { color:var(--sky); }
   .flip-card        { height:auto; min-height:260px; }
   .wa-bubble        { bottom:18px; right:18px; width:52px; height:52px; font-size:24px; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   MODALS — CV Viewer & Certificate Lightbox
+   ═══════════════════════════════════════════════════════════ */
+
+/* CV button in hero (replaces download button) */
+.btn-cv {
+  background: transparent;
+  color: #f87171;
+  border: 2px solid #f87171;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  padding: 13px 28px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.btn-cv::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(255,255,255,0.12);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+.btn-cv:hover::after  { transform: translateX(0); }
+.btn-cv:hover {
+  background: #f87171;
+  color: var(--navy);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(248,113,113,0.35);
+}
+
+/* Cert card — now a div, styled as clickable */
+.cert-card {
+  cursor: pointer;
+  user-select: none;
+}
+.cert-card:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+/* Overlay backdrop */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Modal box */
+.modal-box {
+  background: var(--navy2);
+  border: 1px solid rgba(56,189,248,0.2);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  transform: scale(0.96) translateY(12px);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  max-height: 92vh;
+}
+.modal-overlay.open .modal-box {
+  transform: scale(1) translateY(0);
+}
+
+/* CV modal — wide for landscape PDF */
+.modal-box--cv   { width: min(900px, 96vw); }
+/* Certificate modal — slightly narrower */
+.modal-box--cert { width: min(780px, 96vw); }
+
+/* Header bar inside modal */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(56,189,248,0.12);
+  flex-shrink: 0;
+  gap: 12px;
+}
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.modal-title i { color: var(--sky); }
+.modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Download button inside CV modal header */
+.modal-btn-dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(56,189,248,0.1);
+  border: 1px solid rgba(56,189,248,0.25);
+  color: var(--sky);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+.modal-btn-dl:hover {
+  background: var(--sky);
+  color: var(--navy);
+}
+
+/* Close button */
+.modal-close {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  border: 1px solid rgba(56,189,248,0.15);
+  background: transparent;
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.modal-close:hover {
+  background: rgba(248,113,113,0.15);
+  border-color: #f87171;
+  color: #f87171;
+}
+
+/* Content area */
+.modal-body {
+  flex: 1;
+  overflow: hidden;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+/* PDF iframe fills the modal body */
+.modal-body iframe {
+  width: 100%;
+  height: 75vh;
+  border: none;
+  display: block;
+}
+
+/* Certificate image in lightbox */
+.modal-body img.cert-lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Loading spinner while iframe loads */
+.modal-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.modal-loading i {
+  font-size: 32px;
+  color: var(--sky);
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Prevent body scroll when modal open */
+body.modal-open { overflow: hidden; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .modal-box--cv,
+  .modal-box--cert { width: 100%; max-height: 95vh; border-radius: 12px 12px 0 0; align-self: flex-end; }
+  .modal-overlay   { align-items: flex-end; padding: 0; }
+  .modal-body iframe { height: 65vh; }
+}
