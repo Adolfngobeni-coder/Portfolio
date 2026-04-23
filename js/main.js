@@ -126,7 +126,7 @@ function showFeedback(type, msg) {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   PROJECT CAROUSEL - SINGLE SLIDE (like a platform)
+   PROJECT CAROUSEL - 3 SLIDES AT A TIME
    ═══════════════════════════════════════════════════════════ */
 const track = document.getElementById('projectTrack');
 const prevBtn = document.getElementById('prevProject');
@@ -136,16 +136,26 @@ const dotsContainer = document.getElementById('projectDots');
 if (track && prevBtn && nextBtn && dotsContainer) {
   const slides = Array.from(document.querySelectorAll('.carousel-slide'));
   const totalSlides = slides.length;
-  let currentIndex = 0;
+  
+  // Determine slides per view based on screen width
+  function getSlidesPerView() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  }
+  
+  let slidesPerView = getSlidesPerView();
+  let currentPage = 0;
+  const totalPages = Math.ceil(totalSlides / slidesPerView);
 
   // Create dots
   function createDots() {
     dotsContainer.innerHTML = '';
-    for (let i = 0; i < totalSlides; i++) {
+    for (let i = 0; i < totalPages; i++) {
       const dot = document.createElement('div');
       dot.classList.add('dot');
-      if (i === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(i));
+      if (i === currentPage) dot.classList.add('active');
+      dot.addEventListener('click', () => goToPage(i));
       dotsContainer.appendChild(dot);
     }
   }
@@ -153,31 +163,66 @@ if (track && prevBtn && nextBtn && dotsContainer) {
   function updateDots() {
     const dots = document.querySelectorAll('.dot');
     dots.forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === currentIndex);
+      dot.classList.toggle('active', idx === currentPage);
     });
   }
 
+  function getSlideWidth() {
+    const slide = slides[0];
+    if (!slide) return 300;
+    const style = window.getComputedStyle(track);
+    const gap = parseInt(style.gap) || 24;
+    return slide.offsetWidth + gap;
+  }
+
   function updateCarousel() {
-    const slideWidth = slides[0].offsetWidth;
-    const translateValue = -currentIndex * slideWidth;
+    const slideWidth = getSlideWidth();
+    const translateValue = -currentPage * slidesPerView * slideWidth;
     track.style.transform = `translateX(${translateValue}px)`;
     updateDots();
   }
 
-  function goToSlide(index) {
-    currentIndex = index;
+  function goToPage(page) {
+    currentPage = Math.min(Math.max(page, 0), totalPages - 1);
     updateCarousel();
   }
 
   function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
+    if (currentPage + 1 < totalPages) {
+      currentPage++;
+    } else {
+      currentPage = 0; // loop back to start
+    }
     updateCarousel();
   }
 
   function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    if (currentPage - 1 >= 0) {
+      currentPage--;
+    } else {
+      currentPage = totalPages - 1; // loop to end
+    }
     updateCarousel();
   }
+
+  // Handle window resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const newSlidesPerView = getSlidesPerView();
+      if (newSlidesPerView !== slidesPerView) {
+        slidesPerView = newSlidesPerView;
+        const newTotalPages = Math.ceil(totalSlides / slidesPerView);
+        currentPage = Math.min(currentPage, newTotalPages - 1);
+        if (currentPage < 0) currentPage = 0;
+        createDots();
+        updateCarousel();
+      } else {
+        updateCarousel();
+      }
+    }, 150);
+  });
 
   // Initialize
   createDots();
@@ -186,20 +231,6 @@ if (track && prevBtn && nextBtn && dotsContainer) {
   // Event listeners
   nextBtn.addEventListener('click', nextSlide);
   prevBtn.addEventListener('click', prevSlide);
-
-  // Handle window resize
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      updateCarousel();
-    }, 150);
-  });
-
-  // Optional: auto-play (uncomment if desired)
-  // let autoPlay = setInterval(nextSlide, 5000);
-  // track.addEventListener('mouseenter', () => clearInterval(autoPlay));
-  // track.addEventListener('mouseleave', () => { autoPlay = setInterval(nextSlide, 5000); });
 }
 
 /* ═══════════════════════════════════════════════════════════
