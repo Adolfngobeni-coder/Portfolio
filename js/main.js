@@ -10,7 +10,7 @@ window.addEventListener('scroll', () => {
 
 /* ── Active nav link on scroll ─────────────────────────────── */
 const sections = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.nav a');
+const navLinks = document.querySelectorAll('.nav a');
 
 window.addEventListener('scroll', () => {
   let current = '';
@@ -48,29 +48,22 @@ const barObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 skillBars.forEach(b => barObserver.observe(b));
 
-/* ── Flip cards — tap/touch & keyboard support ─────────────── */
+/* ── Flip cards ───────────────────────────────────────────── */
 const flipCards = document.querySelectorAll('.flip-card');
-
 flipCards.forEach(card => {
-  card.addEventListener('click', () => {
-    card.classList.toggle('flipped');
-  });
+  card.addEventListener('click', () => card.classList.toggle('flipped'));
   card.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       card.classList.toggle('flipped');
     }
-    if (e.key === 'Escape') {
-      card.classList.remove('flipped');
-    }
+    if (e.key === 'Escape') card.classList.remove('flipped');
   });
-  card.addEventListener('blur', () => {
-    card.classList.remove('flipped');
-  });
+  card.addEventListener('blur', () => card.classList.remove('flipped'));
 });
 
 /* ── Contact form handler ──────────────────────────────────── */
-const form     = document.getElementById('contactForm');
+const form = document.getElementById('contactForm');
 const feedback = document.getElementById('formFeedback');
 
 if (form) {
@@ -78,7 +71,6 @@ if (form) {
     e.preventDefault();
 
     form.querySelectorAll('input, textarea').forEach(f => f.style.borderColor = '');
-
     let valid = true;
     form.querySelectorAll('[required]').forEach(field => {
       if (!field.value.trim()) {
@@ -100,13 +92,12 @@ if (form) {
 
     const data = {
       firstName: form.fname.value.trim(),
-      lastName:  form.lname.value.trim(),
-      email:     form.email.value.trim(),
-      phone:     form.phone.value.trim(),
-      service:   form.service.value,
-      message:   form.message.value.trim(),
+      lastName: form.lname.value.trim(),
+      email: form.email.value.trim(),
+      phone: form.phone.value.trim(),
+      service: form.service.value,
+      message: form.message.value.trim(),
     };
-
     simulateSubmit(data);
   });
 }
@@ -135,16 +126,91 @@ function showFeedback(type, msg) {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   PROJECT CAROUSEL - SINGLE SLIDE (like a platform)
+   ═══════════════════════════════════════════════════════════ */
+const track = document.getElementById('projectTrack');
+const prevBtn = document.getElementById('prevProject');
+const nextBtn = document.getElementById('nextProject');
+const dotsContainer = document.getElementById('projectDots');
+
+if (track && prevBtn && nextBtn && dotsContainer) {
+  const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+
+  // Create dots
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === currentIndex);
+    });
+  }
+
+  function updateCarousel() {
+    const slideWidth = slides[0].offsetWidth;
+    const translateValue = -currentIndex * slideWidth;
+    track.style.transform = `translateX(${translateValue}px)`;
+    updateDots();
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+
+  // Initialize
+  createDots();
+  updateCarousel();
+
+  // Event listeners
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  // Handle window resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      updateCarousel();
+    }, 150);
+  });
+
+  // Optional: auto-play (uncomment if desired)
+  // let autoPlay = setInterval(nextSlide, 5000);
+  // track.addEventListener('mouseenter', () => clearInterval(autoPlay));
+  // track.addEventListener('mouseleave', () => { autoPlay = setInterval(nextSlide, 5000); });
+}
+
+/* ═══════════════════════════════════════════════════════════
    CV MODAL
    ═══════════════════════════════════════════════════════════ */
 function openCV() {
-  const modal  = document.getElementById('cvModal');
+  const modal = document.getElementById('cvModal');
   const iframe = document.getElementById('cvFrame');
-
   if (!iframe.src || iframe.src === window.location.href) {
     iframe.src = iframe.getAttribute('data-src');
   }
-
   openModal('cvModal');
 }
 
@@ -162,43 +228,33 @@ document.querySelectorAll('.cert-card').forEach(card => {
 });
 
 function openCert(card) {
-  const src   = card.getAttribute('data-cert');
+  const src = card.getAttribute('data-cert');
   const title = card.getAttribute('data-title') || 'Certificate';
-  const body  = document.getElementById('certModalBody');
+  const body = document.getElementById('certModalBody');
   const modalTitle = document.getElementById('certModalTitle');
 
   modalTitle.innerHTML = `<i class="fa-solid fa-certificate"></i> ${title}`;
+  body.innerHTML = `<div class="modal-loading"><i class="fa-solid fa-spinner"></i><span>Loading certificate…</span></div>`;
 
-  body.innerHTML = `
-    <div class="modal-loading">
-      <i class="fa-solid fa-spinner"></i>
-      <span>Loading certificate…</span>
-    </div>`;
-
-  if (!src || src === '#' || src === '') {
-    body.innerHTML = `
-      <div class="modal-loading">
-        <i class="fa-solid fa-triangle-exclamation" style="color:#f59e0b"></i>
-        <span>No certificate file linked yet.</span>
-      </div>`;
+  if (!src || src === '#') {
+    body.innerHTML = `<div class="modal-loading"><i class="fa-solid fa-triangle-exclamation"></i><span>No certificate file linked yet.</span></div>`;
     openModal('certModal');
     return;
   }
 
   const ext = src.split('.').pop().toLowerCase();
-  const isImage = ['jpg','jpeg','png','webp','gif'].includes(ext);
+  const isImage = ['jpg', 'jpeg', 'png', 'webp', 'gif'].includes(ext);
 
   if (isImage) {
     const img = new Image();
     img.className = 'cert-lightbox-img';
     img.alt = title;
-    img.onload  = () => { body.innerHTML = ''; body.appendChild(img); };
+    img.onload = () => { body.innerHTML = ''; body.appendChild(img); };
     img.onerror = () => { body.innerHTML = '<div class="modal-loading"><i class="fa-solid fa-circle-exclamation"></i><span>Could not load image.</span></div>'; };
     img.src = src;
   } else {
     body.innerHTML = `<iframe src="${src}#toolbar=0&navpanes=0&scrollbar=1" title="${title}" frameborder="0"></iframe>`;
   }
-
   openModal('certModal');
 }
 
@@ -209,7 +265,6 @@ function openModal(id) {
   const overlay = document.getElementById(id);
   overlay.classList.add('open');
   document.body.classList.add('modal-open');
-
   overlay.addEventListener('click', function handler(e) {
     if (e.target === overlay) {
       closeModal(id);
@@ -222,7 +277,6 @@ function closeModal(id) {
   const overlay = document.getElementById(id);
   overlay.classList.remove('open');
   document.body.classList.remove('modal-open');
-
   if (id === 'certModal') {
     setTimeout(() => {
       document.getElementById('certModalBody').innerHTML = '';
@@ -237,36 +291,3 @@ document.addEventListener('keydown', e => {
     });
   }
 });
-
-/* ── Horizontal scroll with mouse drag support ─────────────── */
-const scrollWrapper = document.getElementById('projectsScrollWrapper');
-if (scrollWrapper) {
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  scrollWrapper.addEventListener('mousedown', (e) => {
-    isDown = true;
-    scrollWrapper.style.cursor = 'grabbing';
-    startX = e.pageX - scrollWrapper.offsetLeft;
-    scrollLeft = scrollWrapper.scrollLeft;
-  });
-
-  scrollWrapper.addEventListener('mouseleave', () => {
-    isDown = false;
-    scrollWrapper.style.cursor = 'grab';
-  });
-
-  scrollWrapper.addEventListener('mouseup', () => {
-    isDown = false;
-    scrollWrapper.style.cursor = 'grab';
-  });
-
-  scrollWrapper.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - scrollWrapper.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollWrapper.scrollLeft = scrollLeft - walk;
-  });
-}
