@@ -111,7 +111,7 @@ function simulateSubmit(data) {
     (data.service && data.service !== 'Select a service…' ? `Service: ${data.service}\n` : '') +
     `\nMessage:\n${data.message}`
   );
-  const waURL = `https://wa.me/27000000000?text=${msg}`;
+  const waURL = `https://wa.me/27633436756?text=${msg}`;
   showFeedback('success', '✅ Opening WhatsApp with your message pre-filled…');
   setTimeout(() => {
     window.open(waURL, '_blank');
