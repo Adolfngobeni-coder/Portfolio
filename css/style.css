@@ -523,3 +523,253 @@ footer span { color: var(--sky); }
   .hero-cta { flex-direction: column; align-items: stretch; }
   .hero-cta .btn { width: 100%; justify-content: center; }
 }
+
+/* ==========================================
+   PROFESSIONAL EXPERIENCE — NEW DESIGN
+========================================== */
+
+.experience-pro {
+  padding: 110px 0;
+  position: relative;
+}
+
+.exp-heading {
+  max-width: 680px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.exp-eyebrow,
+.exp-section-label,
+.exp-sidebar-label {
+  display: inline-block;
+  color: #70aaff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.exp-heading h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 800;
+  margin: 0 0 15px;
+}
+
+.exp-heading p {
+  color: var(--text-muted, #9ca3af);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.exp-layout {
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.exp-sidebar {
+  background: linear-gradient(145deg, #142943, #0c1729);
+  color: #fff;
+  border: 1px solid rgba(112, 170, 255, .2);
+  border-radius: 18px;
+  padding: 32px 25px;
+  align-self: start;
+  position: sticky;
+  top: 110px;
+}
+
+.exp-sidebar-icon {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  background: rgba(112, 170, 255, .13);
+  color: #70aaff;
+  border-radius: 14px;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.exp-sidebar-label {
+  color: #91a8c5;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+.exp-sidebar h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 23px;
+  line-height: 1.3;
+  margin: 0 0 17px;
+}
+
+.exp-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(34, 197, 94, .12);
+  color: #86efac;
+  border: 1px solid rgba(34, 197, 94, .2);
+  padding: 7px 11px;
+  border-radius: 30px;
+  font-size: 11px;
+}
+
+.exp-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+}
+
+.exp-meta {
+  display: grid;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.exp-meta div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #c2d0e1;
+  font-size: 12px;
+}
+
+.exp-meta i {
+  color: #70aaff;
+  width: 15px;
+}
+
+.exp-sidebar-line {
+  height: 1px;
+  background: rgba(255,255,255,.12);
+  margin: 28px 0;
+}
+
+.exp-sidebar h4 {
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 600;
+  margin: 0;
+}
+
+.exp-content {
+  background: var(--card-bg, rgba(255,255,255,.035));
+  border: 1px solid var(--border-color, rgba(255,255,255,.09));
+  border-radius: 18px;
+  padding: 36px;
+}
+
+.exp-intro h3,
+.exp-responsibilities > h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  line-height: 1.4;
+  margin: 0 0 14px;
+}
+
+.exp-intro p {
+  color: var(--text-muted, #a1a1aa);
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 720px;
+  margin: 0;
+}
+
+.exp-divider {
+  height: 1px;
+  background: var(--border-color, rgba(255,255,255,.1));
+  margin: 32px 0;
+}
+
+.exp-task-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.exp-task {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.exp-task-icon {
+  flex: 0 0 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(112,170,255,.1);
+  color: #70aaff;
+  font-size: 16px;
+}
+
+.exp-task h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 2px 0 8px;
+}
+
+.exp-task p {
+  color: var(--text-muted, #9ca3af);
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 17px;
+}
+
+.exp-tags span {
+  padding: 8px 12px;
+  border-radius: 7px;
+  background: rgba(112,170,255,.08);
+  border: 1px solid rgba(112,170,255,.17);
+  color: var(--text-muted, #cbd5e1);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Responsive layout */
+
+@media (max-width: 900px) {
+  .exp-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-sidebar {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-pro {
+    padding: 75px 0;
+  }
+
+  .exp-content {
+    padding: 24px 19px;
+  }
+
+  .exp-task-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .exp-sidebar {
+    padding: 25px 20px;
+  }
+}
+
